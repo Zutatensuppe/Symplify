@@ -2,9 +2,7 @@
 
 namespace Symplify\Statie\Renderable;
 
-use Nette\Utils\Strings;
 use ParsedownExtra;
-use Symplify\Statie\Configuration\Configuration;
 use Symplify\Statie\Contract\Renderable\FileDecoratorInterface;
 use Symplify\Statie\Generator\Configuration\GeneratorElement;
 use Symplify\Statie\Renderable\File\AbstractFile;
@@ -16,15 +14,9 @@ final class MarkdownFileDecorator implements FileDecoratorInterface
      */
     private $parsedownExtra;
 
-    /**
-     * @var Configuration
-     */
-    private $configuration;
-
-    public function __construct(ParsedownExtra $parsedownExtra, Configuration $configuration)
+    public function __construct(ParsedownExtra $parsedownExtra)
     {
         $this->parsedownExtra = $parsedownExtra;
-        $this->configuration = $configuration;
     }
 
     /**
